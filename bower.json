@@ -9,7 +9,7 @@
     "api"
   ],
   "main": [
-    "dist/swagger-angular-client.js"
+    "build/swagger-angular-client.js"
   ],
   "homepage": "https://github.com/signalfx/swagger-angular-client",
   "authors": [
