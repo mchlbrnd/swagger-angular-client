@@ -39,10 +39,10 @@
     "url": "git@github.com:signalfx/swagger-angular-client.git"
   },
   "devDependencies": {
-    "angular-mocks": "~1.2.21",
-    "swagger-client-generator": "~0.2.10"
+    "angular-mocks": "^1.3.1",
+    "swagger-client-generator": "git://github.com/mchlbrnd/swagger-client-generator.git#master"
   },
   "dependencies": {
-    "angular": "^1"
+    "angular": "^1.3.1"
   }
 }
