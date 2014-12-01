@@ -15,16 +15,16 @@ angular.module('swagger-client', [])
       try {
         request.body = angular.toJson(JSON.parse(request.body));
       } catch(e){
-        
+
       }
-      
+
       return $http({
         method: request.method,
         url: request.url,
         headers: request.headers,
         data: request.body
       }).then(function(response){
-        return response.data;
+        return response;
       });
     }
 

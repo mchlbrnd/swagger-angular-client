@@ -27,12 +27,12 @@ describe('Swagger Client Provider', function() {
 
     $httpBackend.expectGET('http://petstore.swagger.wordnik.com/api/pet/1')
       .respond(response);
-    
+
     var api = swaggerClient(schema);
     var result = api.pet.getPetById(1);
 
     result.then(function(pet){
-      expect(pet).toEqual(response);
+      expect(pet.data).toEqual(response);
     });
 
     $httpBackend.flush();
@@ -47,7 +47,7 @@ describe('Swagger Client Provider', function() {
 
     $httpBackend.expectGET('http://petstore.swagger.wordnik.com/api/pet/1')
       .respond(response);
-    
+
     var api = swaggerClient(schema);
     var result = api.pet.getPetById();
 
@@ -68,7 +68,7 @@ describe('Swagger Client Provider', function() {
 
     $httpBackend.expectPOST('http://petstore.swagger.wordnik.com/api/pet')
       .respond(response);
-    
+
     var api = swaggerClient(schema);
     api.auth('1234');
     var result = api.pet.addPet({
@@ -78,7 +78,7 @@ describe('Swagger Client Provider', function() {
     });
 
     result.then(function(pet){
-      expect(pet).toEqual(response);
+      expect(pet.data).toEqual(response);
     }).catch(function(e){console.log('err', e);});
 
     $httpBackend.flush();
